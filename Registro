@@ -1,0 +1,14 @@
+const registeredUsers = new Set();
+
+client.on('message', async msg => {
+    if (!registeredUsers.has(msg.from) && msg.body !== '!registrar') {
+        msg.reply('Debes registrarte para usar el bot. Usa el comando !registrar.');
+        return;
+    }
+
+    if (msg.body === '!registrar') {
+        registeredUsers.add(msg.from);
+        msg.reply('¡Te has registrado exitosamente!');
+    }
+});
+ 

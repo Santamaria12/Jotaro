@@ -1,0 +1,15 @@
+const economy = {
+    '+50581261007': 1000,
+    // Agrega más usuarios y sus riquezas aquí
+};
+
+client.on('message', async msg => {
+    if (msg.body === '!top10') {
+        const top10 = Object.entries(economy)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 10)
+            .map(([number, wealth], index) => `${index + 1}. ${number}: ${wealth} monedas`)
+            .join('\n');
+        msg.reply(`🏆 Top 10 Más Ricos 🏆\n${top10}`);
+    }
+});

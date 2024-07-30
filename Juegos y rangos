@@ -1,0 +1,15 @@
+const ranks = {
+    '+50581261007': 'Creador',
+    // Agrega más números y rangos aquí
+};
+
+client.on('message', async msg => {
+    if (msg.body === '!adivinanza') {
+        msg.reply('¿Cuál es el animal que más tarda en quitarse los zapatos? ¡El ciempiés! 🐛');
+    }
+
+    if (msg.body === '!rango') {
+        const rank = ranks[msg.from] || 'Miembro';
+        msg.reply(`Tu rango es: ${rank}`);
+    }
+});

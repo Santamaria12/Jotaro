@@ -1,0 +1,17 @@
+const properties = {
+    casas: [],
+    carros: []
+};
+
+client.on('message', async msg => {
+    if (msg.body.startsWith('!comprar ')) {
+        const item = msg.body.split(' ')[1];
+        if (item === 'casa') {
+            properties.casas.push(msg.from);
+            msg.reply('¡Has comprado una casa!');
+        } else if (item === 'carro') {
+            properties.carros.push(msg.from);
+            msg.reply('¡Has comprado un carro!');
+        }
+    }
+});

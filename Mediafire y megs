@@ -1,0 +1,12 @@
+client.on('message', async msg => {
+    if (msg.body.startsWith('!descargar ')) {
+        const url = msg.body.split(' ')[1];
+        if (url.includes('mediafire') || url.includes('mega')) {
+            // Lógica para descargar archivos
+            msg.reply('Descargando archivo...');
+        } else {
+            msg.reply('Solo se permiten enlaces de Mediafire y Mega.');
+        }
+    }
+});
+ 

@@ -1,0 +1,19 @@
+// Ahorcado
+client.on('message', async msg => {
+    if (msg.body === '!ahorcado') {
+        // Lógica del juego de ahorcado
+        msg.reply('Iniciando juego de ahorcado...');
+    }
+});
+
+// Piedra, Papel o Tijera
+client.on('message', async msg => {
+    if (msg.body.startsWith('!ppt ')) {
+        const choice = msg.body.split(' ')[1];
+        const options = ['piedra', 'papel', 'tijera'];
+        const botChoice = options[Math.floor(Math.random() * options.length)];
+        // Lógica para determinar el ganador
+        msg.reply(`Tú elegiste: ${choice}\nBot eligió: ${botChoice}`);
+    }
+});
+ 

@@ -1,0 +1,7 @@
+client.on('message', async msg => {
+    if (msg.body.startsWith('!descargar ')) {
+        const url = msg.body.split(' ')[1];
+        // Aquí puedes agregar la lógica para descargar el contenido
+        msg.reply('Descargando contenido...');
+    }
+});

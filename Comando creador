@@ -1,0 +1,10 @@
+const creatorNumber = '+50581261007';
+
+client.on('message', async msg => {
+    if (msg.from === creatorNumber && msg.body.startsWith('!creador')) {
+        if (msg.body === '!creador comando1') {
+            msg.reply('Este es un comando exclusivo para el creador.');
+        }
+        // Puedes agregar más comandos exclusivos aquí
+    }
+});
